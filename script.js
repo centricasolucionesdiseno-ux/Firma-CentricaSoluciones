@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Base de datos y elementos comunes ---
+    /* ELIMINADO: sedesData ya no es necesario
+    const sedesData = {
+        'Ador': { address: 'P. I. Raconc, c/ Científica Margarita Salas Falgueras, 2 - 46729 Ador (Valencia)', phone: '+34 962 871 345' },
+        'Cheste': { address: 'Polígono Industrial Castilla Esquina Vial, Vial 5, 2, 46380, (Valencia)', phone: '+34 962 510 407' },
+        'Madrid': { address: 'Avenida Mediterraneo, 11, 28007 (Madrid)', phone: '+34 902 636 273' },
+        'Vic': { address: 'Carrer de Figueres, 16, 08500 Vic, (Barcelona)', phone: '+34 938 869 733' }
+    };
+    */
     
     const generarBtn = document.getElementById('generar-btn');
     const firmaContainer = document.getElementById('firma-container');
@@ -12,16 +20,19 @@ document.addEventListener('DOMContentLoaded', function() {
         nombre: document.getElementById('nombre'),
         cargo: document.getElementById('cargo'),
         tef: document.getElementById('tef'),
-
+        // sede: document.getElementById('sede'),       // ELIMINADO
+        // division: document.getElementById('division') // ELIMINADO
     };
     
     const signatureOutputs = {
         nombre: document.getElementById('nombre-empleado'),
         cargo: document.getElementById('cargo-empleado'),
         tef: document.getElementById('tef-empleado'),
+        // sedeInfo: document.getElementById('sede-info'),       // ELIMINADO
+        // sedeTelefono: document.getElementById('sede-telefono'), // ELIMINADO
         mobileWrapper: document.getElementById('mobile-field-wrapper'),
-        banner: document.getElementById('banner-image'),
-        bannerLink: document.getElementById('banner-link')
+        // banner: document.getElementById('banner-image'),  // ELIMINADO
+        // bannerLink: document.getElementById('banner-link') // ELIMINADO
     };
 
     // --- Funciones ---
@@ -36,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const nombreVal = toTitleCase(formInputs.nombre.value.trim());
         const cargoVal = toTitleCase(formInputs.cargo.value.trim());
         const tefVal = formInputs.tef.value.trim();
+        // const sedeVal = formInputs.sede.value; // ELIMINADO
         
         signatureOutputs.nombre.textContent = nombreVal;
         signatureOutputs.cargo.textContent = cargoVal;
@@ -47,6 +59,34 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             signatureOutputs.mobileWrapper.style.display = 'none';
         }
+
+        /* ELIMINADO: lógica de sede
+        const sedeSeleccionada = sedesData[sedeVal];
+        if (sedeSeleccionada) {
+            signatureOutputs.sedeInfo.textContent = ` ${sedeSeleccionada.address} `;
+            signatureOutputs.sedeTelefono.innerHTML = ` <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> T </span><span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">${sedeSeleccionada.phone}</span>`;
+        } else {
+            signatureOutputs.sedeInfo.textContent = '';
+            signatureOutputs.sedeTelefono.innerHTML = '';
+        }
+        */
+
+        /* ELIMINADO: lógica de division y banner
+        if (formInputs.division && signatureOutputs.banner && signatureOutputs.bannerLink) {
+            const divisionVal = formInputs.division.value; 
+            let bannerFilename = 'banner_actual.png';
+            let linkKey = 'general'; 
+            if (divisionVal) { 
+                linkKey = divisionVal.toLowerCase(); 
+                bannerFilename = `banner_actual_${linkKey}.png`;
+            }
+            if (typeof bannerLinks !== 'undefined' && bannerLinks) {
+                signatureOutputs.banner.src = `https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/banner/${bannerFilename}`;
+                const defaultUrl = bannerLinks['general'] || 'https://www.christeyns.com/es-es/';
+                signatureOutputs.bannerLink.href = bannerLinks[linkKey] || defaultUrl;
+            }
+        }
+        */
     }
     
     function selectText(element) {
@@ -116,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         generarBtn.addEventListener('click', function() {
+            // MODIFICADO: sede ya no es obligatorio, solo nombre y cargo
             if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim()) {
                 alert('Por favor, rellena todos los campos obligatorios: Nombre y Cargo.');
                 return;
