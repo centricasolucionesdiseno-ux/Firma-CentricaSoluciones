@@ -11,7 +11,7 @@
     <div class="noselect">
         <a href="index.html" class="back-button">&larr; Volver a la selección</a>
         <h2>Versión para Outlook Móvil</h2>
-        <p>1. Rellena todos los campos obligatorios (*), incluyendo la sede, y haz clic en "Generar firma".</p>
+        <p>1. Rellena todos los campos obligatorios (*) y haz clic en "Generar firma".</p>
         <p>2. Usa el botón de abajo. En iPhone intentará copiar; en Android seleccionará el texto para que lo copies tú.</p>
 
         <div class="form-container">
@@ -26,58 +26,51 @@
                 </div>
                 <div class="form-group">
                     <label for="tef">Móvil</label>
-                    <input type="text" id="tef" placeholder="123456789" maxlength="9">
+                    <input type="text" id="tef" placeholder="3000000000" maxlength="10">
                 </div>
             </div>
-            <div class="form-center-row">
-                <div class="form-group">
-                    <label for="sede">Sede *</label>
-                    <select id="sede" required>
-                        <option value="" disabled selected>-- Elige una sede --</option>
-                        <option value="Ador">Ador</option>
-                        <option value="Cheste">Cheste</option>
-                        <option value="Madrid">Madrid</option>
-                        <option value="Vic">Vic</option>
-                    </select>
-                </div>
-            </div>
+            <!-- ELIMINADO: form-center-row con sede -->
             <div class="generate-button-container">
                 <button id="generar-btn">Generar firma</button><span id="generado"></span>
             </div>
         </div>
     </div>
 
-    <div class="copy-button-wrapper">
-        <button id="mobile-action-btn" class="action-button" disabled>Copiar / Seleccionar</button>
-    </div>
+    <!-- Oculto por defecto, se muestra al generar -->
+    <div id="resultado-wrapper" style="display: none;">
+        <div class="copy-button-wrapper">
+            <button id="mobile-action-btn" class="action-button">Copiar / Seleccionar</button>
+        </div>
 
-    <div id="firma-container">
-        <p>
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#124a99;"><b id="nombre-empleado"></b></span>
+        <div id="firma-container">
+            <p>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#163A73;"><b id="nombre-empleado"></b></span>
+                <br>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;"><b id="cargo-empleado"></b></span>
+                <br><br>
+            </p>
+            <p id="direccion-container">
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#163A73;font-size:14px;">Centrica Soluciones </span>
+                <!-- ELIMINADO: sede-info -->
+                <span id="mobile-field-wrapper" style="display: none;">
+                    <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> Movil </span>
+                    <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+57 </span>
+                    <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="tef-empleado"></span>
+                </span>
+                <!-- ELIMINADO: sede-telefono -->
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> Web </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> Disponible pronto</span>
+            </p>
+            <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
+            <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/centricasolucionesdiseno-ux/Firma-CentricaSoluciones/main/img/banner/banner_actual.png" alt="banner"></p>
+            <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
             <br>
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;"><b id="cargo-empleado"></b></span>
-            <br><br>
-        </p>
-        <p><span style="font-family:Arial,Helvetica,sans-serif; color:#124a99; font-size:22px; font-weight:bold;">CHRISTEYNS</span></p>
-        <p id="direccion-container">
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;">Christeyns España </span>
-            <span id="sede-info" style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;"></span>
-            <span id="mobile-field-wrapper" style="display: none;">
-                <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> M </span>
-                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+34 </span>
-                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="tef-empleado"></span>
-            </span>
-            <span id="sede-telefono" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"></span>
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> W</span>
-            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> <a href="https://www.christeyns.com/es-es/">www.christeyns.com</a></span>
-        </p>
-        <p style="font-size:12px;font-family:Verdana; margin-top: 10px;">Para ver el aviso legal que afecta a este correo haga clic <a href="https://www.christeyns.com/es-es/privacidad/">aquí</a>
-        <br>
-        Por favor cuide el medioambiente y no imprima este correo electrónico a no ser que sea necesario.</p>
+            Por favor cuide el medioambiente y no imprima este correo electrónico a no ser que sea necesario.
+        </div>
     </div>
 </div>
 
-<script src="script.js?v=1.8"></script>
+<script src="script.js?v=2.0"></script>
 
 </body>
 </html>
