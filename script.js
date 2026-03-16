@@ -156,15 +156,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         generarBtn.addEventListener('click', function() {
-            // MODIFICADO: sede ya no es obligatorio, solo nombre y cargo
             if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim()) {
                 alert('Por favor, rellena todos los campos obligatorios: Nombre y Cargo.');
                 return;
             }
             updateSignature();
+        
+            // AÑADIDO: mostrar el bloque de resultado al generar
+            document.getElementById('resultado-wrapper').style.display = 'block';
+        
             if(copyBtn) copyBtn.disabled = false;
             if(mobileActionBtn) mobileActionBtn.disabled = false;
-            
+        
             generadoSpan.textContent = ' ¡Firma generada!';
             generadoSpan.style.color = 'green';
             generadoSpan.style.fontWeight = 'bold';
