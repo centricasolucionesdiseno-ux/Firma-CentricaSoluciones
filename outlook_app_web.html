@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Generador de firmas - Outlook Escritorio y Web</title>
+</head>
+<body>
+<div class="container">
+    <div class="noselect">
+        <a href="index.html" class="back-button">&larr; Volver a la selección</a>
+        <h2>Versión para Outlook Escritorio y Web</h2>
+        <p>1. Rellena todos los campos obligatorios (*), incluyendo la sede, y haz clic en "Generar firma".</p>
+        <p>2. Usa el botón "Copiar Firma" (solo se activará tras generar) y pégala en la configuración de firmas de Outlook (tanto en escritorio como en web).</p>
+        <p>3. El campo 'División' es opcional. Selecciónalo solo si perteneces a una de estas divisiones: Food, Laundry o PH. En caso contrario, déjalo en 'General'.</p>
+        
+        <div class="form-container">
+            <div class="form-top-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre y apellidos *</label>
+                    <input type="text" id="nombre" placeholder="Nombre Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="cargo">Cargo *</label>
+                    <input type="text" id="cargo" placeholder="Cargo de empleado" required>
+                </div>
+                <div class="form-group">
+                    <label for="tef">Móvil</label>
+                    <input type="text" id="tef" placeholder="123456789" maxlength="9">
+                </div>
+            </div>
+            <div class="form-middle-row">
+                <div class="form-group">
+                    <label for="sede">Sede *</label>
+                    <select id="sede" required>
+                        <option value="" disabled selected>-- Elige una sede --</option>
+                        <option value="Ador">Ador</option>
+                        <option value="Cheste">Cheste</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Vic">Vic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="division">División (Opcional)</label>
+                    <select id="division">
+                        <option value="">General</option>
+                        <option value="food">Food</option>
+                        <option value="laundry">Laundry</option>
+                        <option value="ph">PH</option>
+                    </select>
+                </div>
+            </div>
+            <div class="generate-button-container">
+                <button id="generar-btn">Generar firma</button><span id="generado"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-button-wrapper">
+        <button id="copy-btn" class="action-button" disabled>Copiar Firma</button>
+    </div>
+
+    <div id="firma-container">
+        <p>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#124a99;"><b id="nombre-empleado"></b></span>
+            <br>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;"><b id="cargo-empleado"></b></span>
+            <br><br>
+        </p>
+        <p><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/logo.png" alt="logo"></p>
+        <p id="direccion-container">
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;">Christeyns España </span>
+            <span id="sede-info" style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;"></span>
+            <span id="mobile-field-wrapper" style="display: none;">
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> M </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+34 </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="tef-empleado"></span>
+            </span>
+            <span id="sede-telefono" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"></span>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> W</span>
+            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> <a href="https://www.christeyns.com/es-es/">www.christeyns.com</a></span>
+        </p>
+        <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/gradient.png" alt="gradient"></p>
+        <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
+        <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/feel_our_passion.png" alt="feel our passion"></p>
+        <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
+        <p style="margin:0; padding:0; line-height:1px;"><a id="banner-link" href="javascript:void(0);" title="Genera la firma para activar el enlace del banner"><img id="banner-image" src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/banner/banner_actual.png" alt="banner"></a></p>
+        
+        <p style="font-size:12px;font-family:Verdana; margin-top: 10px;">Para ver el aviso legal que afecta a este correo haga clic <a href="https://www.christeyns.com/es-es/privacidad/">aquí</a>
+        <br>
+        Por favor cuide el medioambiente y no imprima este correo electrónico a no ser que sea necesario.</p>
+    </div>
+</div>
+<script src="datos_banners.js?v=2.0"></script>
+<script src="script.js?v=2.0"></script>
+</body>
+</html>
