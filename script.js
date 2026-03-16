@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         generarBtn.addEventListener('click', function() {
-            if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim() || !formInputs.sede.value) {
-                alert('Por favor, rellena todos los campos obligatorios: Nombre, Cargo y Sede.');
+            if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim()) {
+                alert('Por favor, rellena todos los campos obligatorios: Nombre y Cargo.');
                 return;
             }
             updateSignature();
