@@ -11,9 +11,10 @@
     <div class="noselect">
         <a href="index.html" class="back-button">&larr; Volver a la selección</a>
         <h2>Versión para Outlook Escritorio y Web</h2>
-        <p>1. Rellena todos los campos obligatorios (*), y haz clic en "Generar firma".</p>
+        <p>1. Rellena todos los campos obligatorios (*) y haz clic en "Generar firma".</p>
         <p>2. Usa el botón "Copiar Firma" (solo se activará tras generar) y pégala en la configuración de firmas de Outlook (tanto en escritorio como en web).</p>
-       
+        <!-- ELIMINADO: instrucción sobre División -->
+        
         <div class="form-container">
             <div class="form-top-row">
                 <div class="form-group">
@@ -26,10 +27,10 @@
                 </div>
                 <div class="form-group">
                     <label for="tef">Móvil</label>
-                    <input type="text" id="tef" placeholder="123456789" maxlength="10">
+                    <input type="text" id="tef" placeholder="123456789" maxlength="9">
                 </div>
             </div>
-            
+            <!-- ELIMINADO: form-middle-row con sede y división -->
             <div class="generate-button-container">
                 <button id="generar-btn">Generar firma</button><span id="generado"></span>
             </div>
@@ -42,27 +43,32 @@
 
     <div id="firma-container">
         <p>
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;"><b id="nombre-empleado"></b></span>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#124a99;"><b id="nombre-empleado"></b></span>
             <br>
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#2ABBE2;"><b id="cargo-empleado"></b></span>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;"><b id="cargo-empleado"></b></span>
             <br><br>
         </p>
-        <p><img src="https://raw.githubusercontent.com/centricasolucionesdiseno-ux/Firma-CentricaSoluciones/main/img/logo.png" alt="logo"></p>
+        <p><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/logo.png" alt="logo"></p>
         <p id="direccion-container">
-            <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;">Centrica Soluciones </span>
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;">Christeyns España </span>
+            <!-- ELIMINADO: sede-info -->
             <span id="mobile-field-wrapper" style="display: none;">
-                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+57 </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> M </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+34 </span>
                 <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="tef-empleado"></span>
             </span>
-            <!--<span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> W</span>
-            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> <a href="https://www.christeyns.com/es-es/">www.christeyns.com</a></span>-->
+            <!-- ELIMINADO: sede-telefono -->
+            <span style="font-family:Arial,Helvetica,sans-serif;color:#4da42f;font-size:14px;"> W</span>
+            <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> Disponible pronto</span>
         </p>
-        
+        <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/gradient.png" alt="gradient"></p>
         <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
-        <p style="margin:0; padding:0; line-height:1px;"><a id="banner-link" href="javascript:void(0);" title="Genera la firma para activar el enlace del banner"><img id="banner-image" src="https://raw.githubusercontent.com/centricasolucionesdiseno-ux/Firma-CentricaSoluciones/main/img/banner/banner_actual.png" alt="banner"></a></p>
+        <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/Firma-Es-Christeyns/Generador-Firmas/main/img/feel_our_passion.png" alt="feel our passion"></p>
+        <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
+        <!-- ELIMINADO: banner con división -->
         
-        <!--<p style="font-size:12px;font-family:Verdana; margin-top: 10px;">Para ver el aviso legal que afecta a este correo haga clic <a href="https://www.christeyns.com/es-es/privacidad/">aquí</a>
-        <br>-->
+        <p style="font-size:12px;font-family:Verdana; margin-top: 10px;">Para ver el aviso legal que afecta a este correo haga clic <a href="https://www.christeyns.com/es-es/privacidad/">aquí</a>
+        <br>
         Por favor cuide el medioambiente y no imprima este correo electrónico a no ser que sea necesario.</p>
     </div>
 </div>
