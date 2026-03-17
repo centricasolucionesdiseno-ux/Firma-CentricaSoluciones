@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         nombre: document.getElementById('nombre'),
         cargo: document.getElementById('cargo'),
         tef: document.getElementById('tef'),
+        dependencia: document.getElementById('dependencia'),
     };
     
     const signatureOutputs = {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cargo: document.getElementById('cargo-empleado'),
         tef: document.getElementById('tef-empleado'),
         mobileWrapper: document.getElementById('mobile-field-wrapper'),
+        dependencia: document.getElementById('dependencia-empleado'),
     };
 
     // --- Funciones ---
@@ -36,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
         signatureOutputs.nombre.textContent = nombreVal;
         signatureOutputs.cargo.textContent = cargoVal;
 
+        const dependenciaVal = formInputs.dependencia.value;
+        signatureOutputs.dependencia.textContent = dependenciaVal;
+        
         if (tefVal) {
             const formattedTef = `${tefVal.substring(0, 3)} ${tefVal.substring(3, 6)} ${tefVal.substring(6, 9)}`;
             signatureOutputs.tef.textContent = formattedTef;
@@ -43,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             signatureOutputs.mobileWrapper.style.display = 'none';
         }
+        
     }
     
     function selectText(element) {
@@ -115,8 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         generarBtn.addEventListener('click', function() {
-            if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim()) {
-                alert('Por favor, rellena todos los campos obligatorios: Nombre y Cargo.');
+            if (!formInputs.nombre.value.trim() || !formInputs.cargo.value.trim() || !formInputs.dependencia.value) {
+                alert('Por favor, rellena todos los campos obligatorios: Nombre, Cargo y Dependencia.');
                 return;
             }
 
