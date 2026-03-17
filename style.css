@@ -18,34 +18,89 @@ body {
 }
 
 /* =================================================================== */
-/* Estilos para la PÁGINA DE INICIO (index.html)
+/* Estilos para la PÁGINA DE INICIO (index.html) - CORREGIDO
 /* =================================================================== */
 .main-card {
-    width: 100%; max-width: 750px; padding: 40px; text-align: center;
-    background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    width: 100%; 
+    max-width: 750px; 
+    padding: 40px; 
+    text-align: center;
+    background-color: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-.main-card .logo { max-width: 315px; margin-bottom: 25px; }
-.main-card h1 {
-    color: #333; font-size: 1.5rem; font-weight: 700; margin-bottom: 40px;
-    text-transform: uppercase; letter-spacing: 1px; font-family: 'Montserrat', sans-serif;
-}
-.button-container { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-.choice-button {
-    flex-basis: 240px; padding: 20px; border: 2px solid #e5e7eb; border-radius: 8px;
-    text-decoration: none; transition: all 0.2s ease-in-out;
-}
-.choice-button:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); border-color: #ccc; }
-.choice-button:hover .text-desktop { color: #0078D4; }
-.choice-button:hover .text-web { color: #00A4EF; }
-.choice-button:hover .text-mobile { color: #00A4EF; }
-.button-text {
-    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
-    transition: color 0.2s ease-in-out; font-family: 'Montserrat', sans-serif;
-}
-.text-desktop { color: #0078D4; }
-.text-web     { color: #00A4EF; }
-.text-mobile  { color: #00A4EF; }
 
+.main-card .logo { 
+    max-width: 315px; 
+    margin-bottom: 25px; 
+}
+
+.main-card h1 {
+    color: #333; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin-bottom: 40px;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-container { 
+    display: flex; 
+    justify-content: center; 
+    gap: 25px; 
+    flex-wrap: wrap; 
+}
+
+.choice-button {
+    flex-basis: 240px; 
+    padding: 20px; 
+    border: 2px solid #e5e7eb; 
+    border-radius: 8px;
+    text-decoration: none; 
+    transition: all 0.2s ease-in-out;
+}
+
+.choice-button:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+    border-color: #ccc; 
+}
+
+/* CORRECCIÓN: Los colores de los textos en hover */
+.choice-button:hover .text-desktop { 
+    color: #0078D4; /* Mantiene el azul de Outlook escritorio */
+}
+
+.choice-button:hover .text-web { 
+    color: #00A4EF; /* Mantiene el azul de Outlook web */
+}
+
+.choice-button:hover .text-mobile { 
+    color: #00A4EF; /* CORREGIDO: Ahora es azul (#00A4EF) en lugar de verde */
+}
+
+.button-text {
+    font-size: 0.9rem; 
+    font-weight: 700; 
+    letter-spacing: 0.5px; 
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Colores base - ya están correctos */
+.text-desktop { 
+    color: #0078D4; /* Azul oscuro de Outlook escritorio */
+}
+
+.text-web {     
+    color: #00A4EF; /* Azul claro de Outlook web */
+}
+
+.text-mobile {  
+    color: #00A4EF; /* Azul claro de Outlook móvil - CORREGIDO (antes era verde) */
+}
 
 /* =================================================================== */
 /* Estilos para las PÁGINAS DEL GENERADOR
