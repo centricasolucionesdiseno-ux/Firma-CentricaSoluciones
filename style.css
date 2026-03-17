@@ -37,14 +37,14 @@ body {
 .choice-button:hover { transform: translateY(-4px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); border-color: #ccc; }
 .choice-button:hover .text-desktop { color: #0078D4; }
 .choice-button:hover .text-web { color: #00A4EF; }
-.choice-button:hover .text-mobile { color: #4da42f; }
+.choice-button:hover .text-mobile { color: #00A4EF; }
 .button-text {
     font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
     transition: color 0.2s ease-in-out; font-family: 'Montserrat', sans-serif;
 }
 .text-desktop { color: #0078D4; }
 .text-web     { color: #00A4EF; }
-.text-mobile  { color: #4da42f; }
+.text-mobile  { color: #00A4EF; }
 
 
 /* =================================================================== */
