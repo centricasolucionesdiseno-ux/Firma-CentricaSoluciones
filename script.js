@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         signatureOutputs.dependencia.textContent = dependenciaVal;
         
         if (tefVal) {
-            const formattedTef = `${tefVal.substring(0, 3)} ${tefVal.substring(3, 6)} ${tefVal.substring(6, 9)}`;
+            const formattedTef = `${tefVal.substring(0, 3)} ${tefVal.substring(3, 6)} ${tefVal.substring(6, 10)}`;
             signatureOutputs.tef.textContent = formattedTef;
             signatureOutputs.mobileWrapper.style.display = 'inline';
         } else {
