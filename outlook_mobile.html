@@ -28,8 +28,18 @@
                     <label for="tef">Móvil</label>
                     <input type="text" id="tef" placeholder="3000000000" maxlength="10">
                 </div>
+                <div class="form-group">
+                    <label for="dependencia">Dependencia *</label>
+                    <select id="dependencia" required>
+                        <option value="" disabled selected>-- Elige una dependencia --</option>
+                        <option value="Desarrollo e Innovacion">Desarrollo e Innovacion</option>
+                        <option value="Producto y Diseño">Producto y Diseño</option>
+                        <option value="Alianzas y Nuevos Negocios">Alianzas y Nuevos Negocios</option>
+                        <option value="Operaciones y Soporte">Operaciones y Soporte</option>
+                        <option value="Administracion y Finanzas">Administracion y Finanzas</option>
+                    </select>
+                </div>
             </div>
-            <!-- ELIMINADO: form-center-row con sede -->
             <div class="generate-button-container">
                 <button id="generar-btn">Generar firma</button><span id="generado"></span>
             </div>
@@ -51,17 +61,16 @@
             </p>
             <p id="direccion-container">
                 <span style="font-family:Arial,Helvetica,sans-serif;color:#163A73;font-size:14px;">Centrica Soluciones </span>
-                <!-- ELIMINADO: sede-info -->
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> | Dependencia </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="dependencia-empleado"></span>
                 <span id="mobile-field-wrapper" style="display: none;">
-                    <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> Movil </span>
+                    <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> | Movil </span>
                     <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;">+57 </span>
                     <span style="font-family:Arial,Helvetica,sans-serif;color:#606060;font-size:14px;" id="tef-empleado"></span>
                 </span>
-                <!-- ELIMINADO: sede-telefono -->
-                <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> Web </span>
+                <span style="font-family:Arial,Helvetica,sans-serif;color:#0E58A9;font-size:14px;"> | Web </span>
                 <span style="font-family:Arial,Helvetica,sans-serif;font-size:14px;"> Disponible pronto</span>
             </p>
-            <div style="height: 3px; line-height: 3px; font-size: 3px;">&nbsp;</div>
             <br>
             Por favor cuide el medioambiente y no imprima este correo electrónico a no ser que sea necesario.
         </div>
@@ -69,6 +78,5 @@
 </div>
 
 <script src="script.js?v=2.0"></script>
-
 </body>
 </html>
