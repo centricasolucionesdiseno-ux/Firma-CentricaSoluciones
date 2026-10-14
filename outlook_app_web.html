@@ -82,7 +82,7 @@
                 </tr>
             </table>
             <div style="height: 8px; line-height: 8px; font-size: 8px;">&nbsp;</div>
-            <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/centricasolucionesdiseno-ux/Firma-CentricaSoluciones/main/img/banner/banner_actual.png" alt="Centrica Soluciones Innovadoras" width="600" height="120" style="display:block;width:600px;height:120px;border:0;"></p>
+            <p style="margin:0; padding:0; line-height:1px;"><img src="https://raw.githubusercontent.com/centricasolucionesdiseno-ux/Firma-CentricaSoluciones/main/img/banner/banner_sin_slogan.png" alt="Centrica Soluciones Innovadoras" width="600" height="120" style="display:block;width:600px;height:120px;border:0;"></p>
             <div style="height: 6px; line-height: 6px; font-size: 6px;">&nbsp;</div>
             <p style="margin:0;padding:0;line-height:1.3;">
                 <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;letter-spacing:0.3px;">SOLUCIONES QUE </span><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#0E58A9;letter-spacing:0.3px;">DEFINEN EL FUTURO </span><span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;letter-spacing:0.3px;">EMPRESARIAL</span>
@@ -92,6 +92,41 @@
         </div>
     </div>
 </div>
+<script>
+/* Incrusta las imagenes de la firma (mascota y banner) como datos base64.
+   Asi, al copiar y pegar en Outlook, viajan dentro del correo y el destinatario
+   no tiene que pulsar "Descargar imagenes". Si falla, queda el enlace normal. */
+(function () {
+    var wrap = '#firma-container img';
+    function embed(img) {
+        var src = img.getAttribute('src');
+        if (!src || src.indexOf('data:') === 0 || img.dataset.embedding) return;
+        img.dataset.embedding = '1';
+        fetch(src, { cache: 'force-cache' })
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+            .then(function (b) {
+                return new Promise(function (ok) {
+                    var fr = new FileReader();
+                    fr.onload = function () { ok(fr.result); };
+                    fr.readAsDataURL(b);
+                });
+            })
+            .then(function (uri) { img.setAttribute('src', uri); })
+            .catch(function () { /* se mantiene la URL original */ })
+            .then(function () { delete img.dataset.embedding; });
+    }
+    function run() {
+        document.querySelectorAll(wrap).forEach(embed);
+        var box = document.getElementById('firma-container');
+        if (box && window.MutationObserver) {
+            new MutationObserver(function (m) {
+                m.forEach(function (x) { if (x.target.tagName === 'IMG') embed(x.target); });
+            }).observe(box, { attributes: true, attributeFilter: ['src'], subtree: true });
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
+</script>
 <script src="datos_banners.js?v=2.0"></script>
 <script src="script.js?v=2.0"></script>
 </body>
